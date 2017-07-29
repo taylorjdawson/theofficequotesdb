@@ -1,9 +1,13 @@
 /**
  * Created by Foba on 3/27/2017.
  */
+
+const ElasticSearchAddr = "http://35.185.217.146:9200/firebase/line/_search?q=text_entry_norm:";
+const ELASTICSEARCH_LOCAL_ADDR = "http://localhost:9220/_search?q=";
+
 //TODO: Condense function
-(function() {
-    const ElasticSearchAddr = "http://35.185.217.146:9200/firebase/line/_search?q=text_entry_norm:";
+ function searchFunction() {
+
     var httpRequest;
     document.getElementById("button").onclick = function() {
 
@@ -13,7 +17,7 @@
 
         // Tilda added for fuzzy searching
         //Todo: Make a json structured query
-        makeRequest(ElasticSearchAddr + searchText+'~');
+        makeRequest(ELASTICSEARCH_LOCAL_ADDR  + searchText );
     };
 
     function makeRequest(url) {
@@ -35,25 +39,22 @@
                 //$("#par_text").text(httpRequest.responseText);
                 //TODO: Move outside of function?????
                 var responseJSON = JSON.parse(httpRequest.responseText);
-                displaySearchResults(responseJSON.hits.hits);
+                displaySearchResults(responseJSON);
             } else {
                 alert('There was a problem with the request. Status: ' + httpRequest.status);
             }
         }
     }
-})();
+ }
 
 function displaySearchResults(arr) {
     var out = "";
     var i;
     for(i = 0; i < arr.length; i++) {
-    out +=  '<li class="mdl-list__item mdl-list__item--three-line">' +
-            '<span class="mdl-list__item-primary-content"><i class="material-icons mdl-list__item-avatar">person</i>' +
-            '<span>' + arr[i]._source.speaker + '</span>' +
-            '<span class="mdl-list__item-text-body">' + arr[i]._source.text_entry_orig + '</span></span></li>';
-
-        // out += '<p>' + arr[i]._source.speaker + ' : ' +
-        //     arr[i]._source.text_entry_orig + '<\p>';
+    out += '<li class="list-group-item"><blockquote>' + arr[i]['line'] + '</blockquote>Season:' +
+        arr[i]['season'] + 'Episode:' + arr[i]['episode'] + 'Time:' + arr[i]['time']['minutes'] + 'm' + arr[i]['time']['seconds']+'s' +
+        '<br><span><button type="button" class="btn btn-link icon-button" style="outline:none;" >' +
+        '<span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span></button></span></li>'
     }
     document.getElementById("quotes_list").innerHTML = out;
 }
