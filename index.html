@@ -122,33 +122,22 @@
             </div>
         </div>
 
-        <!-- /.row -->
-    <div class="row">
-            <div class="input-group col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2
-            col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-                <input id="search_text" type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                <button id="button" class="btn btn-secondary" type="button">Go!</button>
-            </span>
-            </div>
-            <!-- /input-group -->
-    </div>
+        <!--Search Button-->
+        <div class="row">
+                <div class="input-group col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2
+                col-lg-8 col-lg-offset-2">
+                    <input id="search_text" type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button id="search_button" class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+                </div>
+        </div>
+
         <!--TODO: moves these styles to the css sheet-->
         <hr>
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <ul id="quotes_list" class="list-group">
-                <!--<li class="list-group-item">-->
-                    <!--<blockquote>Does the carpet match the drapes?</blockquote>-->
-                    <!--Season: 1 Episode: 1 Time: m s-->
-                    <!--<br>-->
-                    <!--<span>-->
-                        <!--<button type="button" class="btn btn-link icon-button" style="outline: none;" >-->
-                                <!--<span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>-->
-                        <!--</button>-->
-                    <!--</span>-->
-                <!--</li>-->
-
             </ul>
         </div>
 
@@ -166,12 +155,12 @@
     <!-- Bootstrap Core JavaScript -->
     <!--TODO: Change to CDN-->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/elasticSearchRequest.js"></script>
-    <script>
-        $(".btn").mouseup(function(){
-            $(this).blur();
-        })
-    </script>
+
+
+    <!--<script src="js/elasticSearchRequest.js"></script>-->
+
+    <script src="js/main.js"></script>
+
 
 </body>
 
