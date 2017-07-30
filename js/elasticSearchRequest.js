@@ -38,7 +38,9 @@ function displaySearchResults(arr) {
         out += '<li class="list-group-item"><blockquote>' + arr[i]['line'] + '</blockquote>Season:' +
             arr[i]['season'] + 'Episode:' + arr[i]['episode'] + 'Time:' + arr[i]['time']['minutes'] + 'm' + arr[i]['time']['seconds']+'s' +
             '<br><span><button type="button" class="btn btn-link icon-button" style="outline:none;" >' +
-            '<span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span></button></span></li>'
+            '<span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span></button></span>' +
+            '<span aria-hidden="true" class="glyphicon glyphicon-eye-open"></span></button></span>' +
+            '</li>'
     }
     document.getElementById("quotes_list").innerHTML = out;
 }

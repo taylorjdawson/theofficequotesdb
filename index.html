@@ -128,7 +128,9 @@
                 col-lg-8 col-lg-offset-2">
                     <input id="search_text" type="text" class="form-control" placeholder="Search for...">
                     <span class="input-group-btn">
-                        <button id="search_button" class="btn btn-secondary" type="button">Go!</button>
+                        <button id="search_button" class="btn btn-secondary" type="button">
+                            <span aria-hidden="true" class="glyphicon glyphicon-search"></span>
+                        </button>
                     </span>
                 </div>
         </div>
@@ -138,15 +140,31 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <ul id="quotes_list" class="list-group">
+                <div id="no_results" class="text-center" hidden >No results found.</div>
+
             </ul>
         </div>
 
     </div>
 
     </div>
-
-
     <!-- /.container -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">External Site</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Your are about  to leave this site... would you like to continue?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="yes_btn">Yes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery Version 1.11.1 -->
     <!--TODO: Change to CDN-->
