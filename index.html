@@ -140,8 +140,15 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <ul id="quotes_list" class="list-group">
-                <div id="no_results" class="text-center" hidden >No results found.</div>
+                <!--<li class="list-group-item"><blockquote>A quote would go here</blockquote>-->
 
+                    <!--<button type="button" class="btn btn-link icon-button" style="outline:none;" >-->
+                        <!--<span title="View" aria-hidden="true" class="glyphicon glyphicon-eye-open"></span>-->
+                    <!--</button>-->
+                    <!--<button type="button" class="btn btn-link icon-button pull-right" style="outline:none;" >-->
+                        <!--<span title="Feedback" aria-hidden="true" class="glyphicon glyphicon-info-sign"></span>-->
+                    <!--</button>-->
+                <!--</li>-->
             </ul>
         </div>
 
@@ -149,6 +156,8 @@
 
     </div>
     <!-- /.container -->
+
+    <!--MODAL for leaving site to view video.-->
     <div class="modal fade" id="myModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -166,6 +175,43 @@
         </div>
     </div>
 
+    <!--MODAL for feedback-->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <!--TODO: change to beautiful dropdown-->
+                            <label class="mr-sm-2" for="inlineFormCustomSelect">Preference</label>
+                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                                <option selected>Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message-text" class="form-control-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery Version 1.11.1 -->
     <!--TODO: Change to CDN-->
     <script src="js/jquery.js"></script>
@@ -173,6 +219,10 @@
     <!-- Bootstrap Core JavaScript -->
     <!--TODO: Change to CDN-->
     <script src="js/bootstrap.min.js"></script>
+
+    <script>
+
+    </script>
 
 
     <!--<script src="js/elasticSearchRequest.js"></script>-->
