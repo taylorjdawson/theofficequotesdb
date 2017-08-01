@@ -22,6 +22,12 @@
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+
+
+
     <!-- Custom CSS -->
     <style>
     body {
@@ -118,7 +124,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1>The Office Quotes Database!</h1>
-                <p class="lead">Season 1 Episode 1 is now searchable. (Please excuse the poor format, for now...)</p>
+                <p class="lead">Season 1 is now searchable. (Please excuse the poor format, for now...)</p>
             </div>
         </div>
 
@@ -135,7 +141,6 @@
                 </div>
         </div>
 
-        <!--TODO: moves these styles to the css sheet-->
         <hr>
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
@@ -158,7 +163,7 @@
     <!-- /.container -->
 
     <!--MODAL for leaving site to view video.-->
-    <div class="modal fade" id="myModal">
+    <div class="modal fade" id="leaveSiteModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -168,46 +173,43 @@
                     <p>Your are about  to leave this site... would you like to continue?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" id="yes_btn">Yes</button>
+                    <button type="button" class="btn btn-primary" id="leaveSiteModalYesBtn">Yes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!--TODO: NEED TO CLEAR MODAL AFTER REPORT-->
     <!--MODAL for feedback-->
     <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Report issue with this quote.</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="dropdown show form-group">
-                            <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown link
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </div>
-
+                    <form id="feedback-form">
                         <div class="form-group">
-                            <label for="message-text" class="form-control-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <select class="selectpicker" title="Choose one of the following..." id="feedback-modal-selector">
+                                <option value="typo">Typo</option>
+                                <option value="broken_link">Broken Link</option>
+                                <option value="wrong_quote">Wrong Quote</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback-modal-message-text" class="form-control-label">Message:</label>
+                            <textarea class="form-control" id="feedback-modal-message-text" placeholder="Please describe the issue..."></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" id="feedbackModalCancelBtn">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="feedbackModalReportBtn">Report</button>
                 </div>
             </div>
         </div>
@@ -221,14 +223,12 @@
     <!--TODO: Change to CDN-->
     <script src="js/bootstrap.min.js"></script>
 
-    <script>
-
-    </script>
-
-
-    <!--<script src="js/elasticSearchRequest.js"></script>-->
-
     <script src="js/main.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+
 
 
 </body>
