@@ -60,8 +60,9 @@
             contentType: "application/json"
         })
             .success(function () {
-                $('#feedbackModal').find('.modal-header .modal-title').html("Result");
-                $('#feedbackModal').find('.modal-body').html("Your report has been submitted.")
+                var feedbackModal = $('#feedbackModal');
+                feedbackModal.find('.modal-header .modal-title').html("Result");
+                feedbackModal.find('.modal-body').html("Your report has been submitted.")
                 $('#feedback-form').remove();
             })
 
@@ -103,8 +104,11 @@
 
     //TODO: Check for empty form
     //TODO: Since it is a form maybe change it to 'submit' (possibly seek out internet justification)
+
+    // Function handels when the report button is pressed
     $('#feedbackModalReportBtn').click(function () {
-        var issue_type = $('#feedback-modal-selector').find('option:selected').text();
+        var feedback_modal_selector = $('#feedback-modal-selector');
+        var issue_type = feedback_modal_selector.find('option:selected').text();
         var message_text = $('#feedback-modal-message-text').val();
         var line_id = $(this).data('id').toString();
 
@@ -116,8 +120,10 @@
         console.log(line);
 
         $('#feedback-form')[0].reset();
-        $('#feedback-modal-selector').selectpicker('refresh');
+        feedback_modal_selector.selectpicker('refresh');
     });
+
+
     //TODO: reuse more code (best practices)
     $('#feedbackModalCancelBtn').click(function () {
         $('#feedback-form')[0].reset();
