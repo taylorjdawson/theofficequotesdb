@@ -39,7 +39,7 @@
         var dynamicData = {};
         dynamicData["search"] = text;
         return $.ajax({
-            url: "http://localhost:9220/",
+            url: "http://35.185.217.146:9220/",
             type: "get",
             data: dynamicData,
             contentType: "application/json"
