@@ -54,7 +54,7 @@
         dynamicData["line_id"] = encodeURIComponent(line_id);
         dynamicData["line"] = encodeURIComponent(line);
         $.ajax({
-            url: "http://localhost:9220/",
+            url: "http://35.185.217.146:9220/",
             type: "post",
             data: dynamicData,
             contentType: "application/json"
